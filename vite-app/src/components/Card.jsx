@@ -1,11 +1,12 @@
 import React from 'react'
 import { useContext } from 'react'
 import { data } from '../App'
+import Button from './Button'
 
 const Card = ({children}) => {
     const obj = useContext(data)
     return (
-        <div>
+        <div className='bg-black h-screen'>
             <div className="relative h-[400px] w-[300px] rounded-md">
                 <img
                     src="https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
@@ -14,7 +15,7 @@ const Card = ({children}) => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 text-left">
-                    <h1 className="text-lg font-semibold text-white">{obj.fullname}</h1>
+                    <h1 className="text-lg font-semibold text-white">{obj}</h1>
                     <p className="mt-2 text-sm text-gray-300">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, debitis?
                     </p>
@@ -24,6 +25,7 @@ const Card = ({children}) => {
                     </button>
                 </div>
             </div>
+            <Button />
         </div>
     )
 }
