@@ -4,28 +4,28 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const List = createBrowserRouter([
     {
-        path:'/',
-        element:Pageobject.navbar ,
-        children:[
+        path: '/',
+        element: Pageobject.navbar,
+        children: [
             {
                 path: "/",
-                element:Pageobject.home ,
+                element: Pageobject.Home,
             },
             {
                 path: "/blog",
-                element:Pageobject.blog ,
+                element: Pageobject.Blog,
             },
             {
                 path: "/pages",
-                element:Pageobject.pages ,
+                element: Pageobject.Pages,
             },
             {
                 path: "/product",
-                element:Pageobject.product ,
+                element: Pageobject.Product,
             },
             {
                 path: "/shop",
-                element:Pageobject.shop ,
+                element: Pageobject.Shop,
             },
         ]
     }

@@ -5,11 +5,11 @@ import Pages from './Pages'
 import Product from './Product'
 import Shop from './Shop'
 
-export const Pageobject = () => {
- home : < Home /> 
- blog : <Blog />
- pages : <Pages />
- product : <Product />
- shop : <Shop />
+export const Pageobject = {
+    Home: < Home />,
+    Blog: <Blog />,
+    Pages: <Pages />,
+    Product: <Product />,
+    Shop: <Shop />,
 }
 

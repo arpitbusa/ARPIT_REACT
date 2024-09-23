@@ -3,10 +3,10 @@ import { useContext } from 'react'
 import { data } from '../App'
 import Button from './Button'
 
-const Card = ({children}) => {
+const Card = ({ children }) => {
     const obj = useContext(data)
     return (
-        <div className='bg-black h-screen'>
+        <div className='bg-white h-screen'>
             <div className="relative h-[400px] w-[300px] rounded-md">
                 <img
                     src="https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
