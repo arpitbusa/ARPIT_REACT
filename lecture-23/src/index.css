@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components{
+    .heading{
+      @apply bg-green-300 p-4 text-center text-2xl font-black text-white
+    }
+  }
+
+  .active{
+    color:blue;
+  }
