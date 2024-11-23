@@ -12,6 +12,7 @@ const BUY_CAKE = 'BUY_CAKE'
 const BUY_PIZZA = 'BUY_PIZZA'
 const BUY_MAGGI = 'BUY_MAGGI'
 const BUY_CANDY = 'BUY_CANDY'
+const BUY_COKE = 'BUY_COKE'
 
 /* REDUX ACTION */
 
@@ -24,25 +25,31 @@ function buy_chocolate(){
 function buy_cake(){
     return{
         type:BUY_CAKE,
-        info:'first redux action'
+        info:'second redux action'
     }
 }
 function buy_pizza(){
     return{
         type:BUY_PIZZA,
-        info:'first redux action'
+        info:'third redux action'
     }
 }
 function buy_maggi(){
     return{
         type:BUY_MAGGI,
-        info:'first redux action'
+        info:'four redux action'
     }
 }
 function BUY_candy(){
     return{
         type:BUY_CANDY,
-        info:'first redux action'
+        info:'five redux action'
+    }
+}
+function BUY_coke(){
+    return{
+        type:BUY_COKE,
+        info:'six redux action'
     }
 }
 
@@ -54,6 +61,7 @@ const initialState = {
     NumofPizza : 15,
     Numofmaggi :25,
     Numofcandy :35,
+    Numofcoke :29,
 }
 
 /* Redux Reducer */
@@ -124,6 +132,16 @@ const CandyReducer = (state = initialState , action) => {
     }
 }
 
+const CokeReducer = (state = initialState , action) => {
+    switch(action.type){
+        case BUY_COKE : return{
+            ...state,
+            Numofcoke:state.Numofcoke - 1
+        }
+        default:return state
+    }
+}
+
 /* redux store */
 
 const rootReducer = combineReducers({
@@ -132,7 +150,8 @@ const rootReducer = combineReducers({
     CakeReducer,
     PizzaReducer,
     MaggiReducer,
-    CandyReducer
+    CandyReducer,
+    CokeReducer
 })
 
 
@@ -147,5 +166,6 @@ store.dispatch(buy_cake())
 store.dispatch(buy_pizza())
 store.dispatch(buy_maggi())
 store.dispatch(BUY_candy())
+store.dispatch(BUY_coke())
 
 unsubscribe()
