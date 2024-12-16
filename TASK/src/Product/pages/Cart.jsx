@@ -12,7 +12,7 @@ const Cart = () => {
     console.log("cart data ", cart_data);
 
     const empty_data_list = () => {
-        dispatch(empty_cart())   
+        dispatch(empty_cart())      
     }
 
     const wishlist_data = useSelector((state) => state.wishlist);
