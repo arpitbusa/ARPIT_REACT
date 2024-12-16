@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Navbar from "../Components/Navbar";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { cart_to_wishlist, empty_cart, remove_to_cart } from "../../Redux/Action";
@@ -26,6 +27,8 @@ const Cart = () => {
 
     const dispatch = useDispatch()
     return (
+        <>
+        <Navbar/>
         <div className="p-6 h-screen">
             <h1 className="text-2xl font-bold mb-4">Cart</h1>
             {
@@ -89,6 +92,7 @@ const Cart = () => {
                 
             )}
         </div>
+    </>
     );
 };
 

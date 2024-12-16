@@ -1,6 +1,6 @@
 import { ADD_TO_CART , REMOVE_TO_CART , EMPTY_CART , CART_TO_WISHLIST , ADD_TO_WISHLIST , REMOVE_TO_WISHLIST , EMPTY_WISHLIST, WISHLIST_TO_CART } from "./Constant";
 
-export const add_to_cart = () => {
+export const add_to_cart = (cartdata) => {
     return{
         type:ADD_TO_CART,
         payload:cartdata

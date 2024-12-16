@@ -11,9 +11,11 @@ import { ToastContainer, toast } from 'react-toastify';
 export const cartReducer = (state = [], action) => {
   switch (action.type) {
       case ADD_TO_CART:
+        console.log("cartReducer called");
           {
               const added_to_cart = state.some((state) => state.id === action.payload.id)
-
+              console.log("added_to_cart" , added_to_cart);
+              
               if (added_to_cart) {
                   toast.warn("Item already exist !");
                   return state

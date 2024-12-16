@@ -1,6 +1,8 @@
 import React from "react"; 
-import { NavLink } from "react-router-dom"; 
 import Navbar from "../Components/Navbar";
+import { useDispatch , useSelector } from "react-redux";
+import { add_to_cart, add_to_wishlist } from "../../Redux/Action"
+// import {products} from "../../Redux/Data.json"
  
 const products = [ 
   { id: 1, name: "Shoes VIR", price: "$20", image: "https://rukminim2.flixcart.com/image/850/1000/xif0q/shoe/c/n/h/10-126-grey-10-winprice-grey-original-imagrmcyhvmzxhvv.jpeg?q=90&crop=false" }, 
@@ -16,8 +18,11 @@ const products = [
 ]; 
  
 const Shop = () => { 
- 
- 
+
+const dispatch = useDispatch()
+console.log("products" , products);
+
+
   return ( 
     <>
     <Navbar/>
@@ -34,10 +39,8 @@ const Shop = () => {
             <img src={product.image} alt={product.name} className="w-full h-50 object-cover rounded" /> 
             <h2 className="text-lg font-semibold mt-2">{product.name}</h2> 
             <p className="text-gray-600">{product.price}</p> 
-            <button className="mt-3 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"> 
-              <NavLink to='/Cart'> 
-              Add to Cart 
-              </NavLink></button> 
+              <button className="mt-3 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onClick={()=> dispatch(add_to_cart(product))}>Add to Cart</button>
+              <button className="mt-3 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 ml-8" onClick={()=> dispatch(add_to_wishlist(product))}>Add to Wishlist</button>
           </div> 
         ))} 
       </div> 

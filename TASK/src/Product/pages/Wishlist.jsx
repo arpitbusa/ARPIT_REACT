@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { empty_wishlist , remove_to_wishlist } from "../../Redux/Action";
+import Navbar from "../Components/Navbar";
 
 
 const Wishlist = () => {
@@ -21,6 +22,8 @@ const Wishlist = () => {
 
     const dispatch = useDispatch()
     return (
+        <>
+        <Navbar/>
         <div className="p-6 h-screen ">
             <h1 className="text-2xl font-bold mb-4">Wishlist</h1>
 
@@ -83,6 +86,7 @@ const Wishlist = () => {
                 </div>
             </div>
         </div>
+    </>
     );
 };
 
