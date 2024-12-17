@@ -3,6 +3,7 @@ import Navbar from "../Components/Navbar";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { cart_to_wishlist, empty_cart, remove_to_cart } from "../../Redux/Action";
+import { ToastContainer } from "react-toastify";
 
 const Cart = () => {
 
@@ -29,6 +30,7 @@ const Cart = () => {
     return (
         <>
         <Navbar/>
+        <ToastContainer/>
         <div className="p-6 h-screen">
             <h1 className="text-2xl font-bold mb-4">Cart</h1>
             {
@@ -69,12 +71,12 @@ const Cart = () => {
                                     Cart to wishlist
                                 </button>
                                 <button onClick={() => dispatch(remove_to_cart(item))} className="bg-red-500 text-white px-4 py-2 mt-4 rounded hover:bg-red-600">
-                                    Remove
+                                    Remove to cart
                                 </button>
                             </div>
                         ))}
                     </div>
-                    <div className="mt-6 text-right">
+                    {/* <div className="mt-6 text-right">
 
                         <div>
                             <p className="text-lg font-bold">Total: ${calculateTotal()}</p>
@@ -84,7 +86,7 @@ const Cart = () => {
                                 </NavLink>
                             </button>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             ) : (
                

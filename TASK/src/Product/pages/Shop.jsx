@@ -40,7 +40,6 @@ console.log("products" , products);
             <h2 className="text-lg font-semibold mt-2">{product.name}</h2> 
             <p className="text-gray-600">{product.price}</p> 
               <button className="mt-3 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onClick={()=> dispatch(add_to_cart(product))}>Add to Cart</button>
-              <button className="mt-3 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 ml-8" onClick={()=> dispatch(add_to_wishlist(product))}>Add to Wishlist</button>
           </div> 
         ))} 
       </div> 

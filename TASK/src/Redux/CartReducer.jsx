@@ -4,36 +4,39 @@ import {
   EMPTY_CART,
 } from "./Constant";
 
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
+
+const initialstate = {
+    CartData : [],
+    CartWish : []
+}
 
 
-
-export const cartReducer = (state = [], action) => {
+export const cartReducer = (state = initialstate, action) => {
   switch (action.type) {
       case ADD_TO_CART:
         console.log("cartReducer called");
           {
-              const added_to_cart = state.some((state) => state.id === action.payload.id)
+              const added_to_cart = state.CartData.some((CartData) => CartData.id === action.payload.id)
               console.log("added_to_cart" , added_to_cart);
               
               if (added_to_cart) {
                   toast.warn("Item already exist !");
-                  return state
+                  return CartData
               } else {
                   toast.success("item add to cart !");
-                  return [...state, action.payload]
+                  return [...state.CartData, action.payload]
               }
           }
 
       case REMOVE_TO_CART:
-
-          const remove_cart_data = state.filter((state) => state.id !== action.payload.id)
-          console.log('remove_cart_data from CART', remove_cart_data);
-
-          return [...remove_cart_data];
+        toast.success('Remove Item')
+        const removeCartData = state.CartData.filter((CartData) => CartData.id !== action.payload.id)
+        console.log(removeCartData);
+        return [...removeCartData]
 
       case EMPTY_CART:
-          return state = []
+          return CartData = []
 
       default: return state
   }
