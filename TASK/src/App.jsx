@@ -1,4 +1,3 @@
-// import Layout from "./website/Layout"
 import Layout from './Product/pages/Layout';
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';

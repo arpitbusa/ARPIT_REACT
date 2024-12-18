@@ -2,7 +2,6 @@ import {
    ADD_TO_WISHLIST,
    REMOVE_TO_WISHLIST,
    EMPTY_WISHLIST,
-   WISHLIST_TO_CART,
    CART_TO_WISHLIST
 } from "./Constant";
 
@@ -41,7 +40,7 @@ export const wishlistReducer = (state = initialState, action) => {
                    toast.warn("Item already exist !");
                    return state
                } else {
-                   toast.success("item add to cart !");
+                   toast.success("item add to wishlist !");
 
                    return {
                        ...state,
@@ -64,11 +63,6 @@ export const wishlistReducer = (state = initialState, action) => {
 
        case EMPTY_WISHLIST:
            return state = initialState
-
-       case WISHLIST_TO_CART:
-           return {
-
-           }
 
        default: return state
    }

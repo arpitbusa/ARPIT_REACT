@@ -1,16 +1,16 @@
 import { ADD_TO_CART , REMOVE_TO_CART , EMPTY_CART , CART_TO_WISHLIST , ADD_TO_WISHLIST , REMOVE_TO_WISHLIST , EMPTY_WISHLIST, WISHLIST_TO_CART } from "./Constant";
 
-export const add_to_cart = (cartdata) => {
+export const add_to_cart = (state) => {
     return{
         type:ADD_TO_CART,
-        payload:cartdata
+        payload:state
     }
 }
 
-export const remove_to_cart = () => {
+export const remove_to_cart = (id) => {
     return{
         type:REMOVE_TO_CART,
-        info:'remove_to_cart action called'
+        payload:id
     }
 }
 
@@ -21,17 +21,11 @@ export const empty_cart = () => {
     }
 }
 
-export const cart_to_wishlist = () => {
+export const cart_to_wishlist = (state) => {
     return{
         type:CART_TO_WISHLIST,
-        info:'cart_to_wishlist action called'
-    }
-}
-
-export const wishlist_to_cart = () => {
-    return{
-        type:WISHLIST_TO_CART,
-        info:'wishlist_to_cart action called'
+        info:'cart_to_wishlist action called',
+        payload:state
     }
 }
 
@@ -42,10 +36,11 @@ export const add_to_wishlist = () => {
     }
 }
 
-export const remove_to_wishlist = () => {
+export const remove_to_wishlist = (id) => {
     return{
         type:REMOVE_TO_WISHLIST,
-        info:'remove_to_wishlist action called'
+        info:'remove_to_wishlist action called',
+        payload:id
     }
 }
 
