@@ -18,9 +18,9 @@ import {products} from "../../Redux/Data.json"
 const Home = () => {
 return (
   <>
-  <Navbar/>
+  {/* <Navbar/> */}
     <div className="p-6">
-      <h1 className="text-2xl font-bold text-center mb-8">Welcome to Our Store</h1>
+      <h1 className="heading">Welcome to Our Store</h1>
 
       {/* Product Grid */}
       <h2 className="text-xl font-semibold mb-4">All Products</h2>
@@ -30,10 +30,11 @@ return (
             key={product.id}
             className="border rounded-lg p-4 shadow hover:shadow-lg transition"
           >
-            <img src={product.thumbnail} alt={product.name} className="w-full h-50 object-cover rounded" />
-            <h2 className="mt-2 text-xl font-semibold text-gray-500"><span className="text-black">Title</span> : {product.title}</h2>
-            <p className="mt-2 text-xl font-semibold text-gray-500"><span className="text-black">Price</span> : ${product.price}</p>
-            <p className="text-gray-600"><span className="text-black text-xl font-semibold">Description</span> : {product.description}</p>
+            <img src={product.image} alt={product.name} className="w-full h-50 object-cover rounded" />
+            <h2 className="text-lg font-semibold mt-2">{product.title}</h2>
+            <p className="text-gray-600">{product.price}</p>
+            
+            <p className="text-gray-500">{product.description}</p>
           </div>
         ))}
       </div>

@@ -1,9 +1,8 @@
 import React from "react";
-import Navbar from "../Components/Navbar";
 import { useDispatch, useSelector } from "react-redux";
-import PaginationControlled from "../Components/Pagination";
 import { add_to_cart } from "../../Redux/Action"
 import { products } from "../../Redux/Data.json"
+import { FaSearch } from "react-icons/fa";
 
 // const products = [ 
 //   { id: 1, name: "Shoes VIR", price: "$20", thumbnail: "https://rukminim2.flixcart.com/image/850/1000/xif0q/shoe/c/n/h/10-126-grey-10-winprice-grey-original-imagrmcyhvmzxhvv.jpeg?q=90&crop=false" }, 
@@ -21,27 +20,28 @@ import { products } from "../../Redux/Data.json"
 const Shop = () => {
 
   const dispatch = useDispatch()
-  // console.log("products", products);
+  console.log("products", products);
 
-  // const handlePageChange = (pageNumber) => {
-  //   if (
-  //     pageNumber > 0 &&
-  //     pageNumber <= products.length / 10 &&
-  //     pageNumber !== page
-  //   )
-  //     setPage(pageNumber);
-  // };
+  const search_data = () => {
+    const input = document.getElementById('input_data').value.toLowerCase();
+    setInput(input);
+  }
+
 
   return (
     <>
-      <Navbar />
-      <div className="flex items-center justify-center">
-        <PaginationControlled />
-      </div>
+      {/* <Navbar/> */}
       <div className="p-6">
-        <h1 className="text-2xl font-bold text-center mb-8">Welcome to Our Store</h1>
+        <h1 className="heading">Welcome to Our Store</h1>
+
+        
+        {/*search bar*/}
+        <div className='flex justify-center items-center gap-4 p-4 border my-3'>
+          <input type="search" placeholder='Search Item'  className='text-black border p-2' id='input_data' onChange={search_data}  />
+          {/* <FaSearch /> */}
+        </div>
+
         {/* Product Grid */}
-        <h2 className="text-xl font-semibold mb-4">All Products</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (
             <div
@@ -49,13 +49,12 @@ const Shop = () => {
               className="border rounded-lg p-4 shadow hover:shadow-lg transition"
             >
               <img src={product.image} alt={product.name} className="w-full h-50 object-cover rounded" />
-              <h2 className="text-lg font-semibold mt-2">{product.name}</h2>
-              <p className="text-gray-600">{product.price}</p>
+              <h2 className="mt-2 text-xl font-semibold text-gray-500"><span className="text-black">Name</span> : {product.name}</h2>
+              <p className="mt-2 text-lg font-semibold text-gray-500"><span className="text-black">ingredients</span> : {product.ingredients}</p>
               <button className="mt-3 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onClick={() => dispatch(add_to_cart(product))}>Add to Cart</button>
             </div>
           ))}
         </div>
-        
 
         {/* Footer */}
         <footer className="mt-12 bg-gray-800 text-white p-6">

@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
+import PaginationControlled from "../Components/Pagination";
 import {products} from "../../Redux/Data.json"
 
 // const products = [
@@ -19,6 +20,9 @@ const Home = () => {
 return (
   <>
   <Navbar/>
+  <div className="flex items-center justify-center">
+        <PaginationControlled/>
+        </div>
     <div className="p-6">
       <h1 className="text-2xl font-bold text-center mb-8">Welcome to Our Store</h1>
 
@@ -30,8 +34,8 @@ return (
             key={product.id}
             className="border rounded-lg p-4 shadow hover:shadow-lg transition"
           >
-            <img src={product.thumbnail} alt={product.name} className="w-full h-50 object-cover rounded" />
-            <h2 className="text-lg font-semibold mt-2">{product.name}</h2>
+            <img src={product.image} alt={product.name} className="w-full h-50 object-cover rounded" />
+            <h2 className="text-lg font-semibold mt-2">{product.title}</h2>
             <p className="text-gray-600">{product.price}</p>
           </div>
         ))}

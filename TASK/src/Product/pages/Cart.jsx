@@ -41,9 +41,9 @@ const Cart = () => {
                     <div className="space-y-4">
                         {cart_data.map((item) => (
                             <div key={item.id} className="flex items-center space-x-4 border-b pb-4">
-                                <img src={item.thumbnail} alt={item.name} className="w-16 h-16 object-cover rounded" />
+                                <img src={item.thumbnail} alt={item.title} className="w-16 h-16 object-cover rounded" />
                                 <div>
-                                    <h2 className="text-lg font-semibold">{item.name}</h2>
+                                    <h2 className="text-lg font-semibold">{item.title}</h2>
                                     <p className="text-gray-600">{item.price}</p>
                                 </div>
 
