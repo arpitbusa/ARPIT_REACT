@@ -11,10 +11,10 @@ const UseReducer = () => {
       <h1>This is Reducer Hook In React</h1>
       <p>Age: {state.age}</p>
       <p>count: {state.count}</p>
-      <button onClick={()=>dispatch('IncrementAge')}>Age Increment</button>
       <button onClick={()=>dispatch('DecrementAge')}>Age Decrement</button>
-      <button onClick={()=>dispatch('IncrementCount')}>Count Increment</button>
+      <button onClick={()=>dispatch('IncrementAge')}>Age Increment</button> <br />
       <button onClick={()=>dispatch('DecrementCount')}>Count Decrement</button>
+      <button onClick={()=>dispatch('IncrementCount')}>Count Increment</button>
     </div>
   )
 }

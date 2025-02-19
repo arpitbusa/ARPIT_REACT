@@ -1,11 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Navbar from "../Components/Navbar";
 
 const Buy = () => {
     return (
+        <>
+        <Navbar/>
         <div className="p-6 flex flex-col items-center">
             <h1 className="text-2xl font-bold mb-4">Order Confirmation</h1>
             <p className="text-lg">Thank you for your purchase!</p>
+        
             <button className="mt-6 bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">
                 <NavLink to='/'>
                     Back to Home
@@ -20,8 +24,8 @@ const Buy = () => {
             <div className="flex justify-center items-center min-h-screen bg-gray-50 py-8">
                 <div className="max-w-xl w-full bg-white shadow-lg rounded-lg overflow-hidden">
                     <img
-                        className="w-full h-64 object-cover"
-                        src="https://via.placeholder.com/600x400"
+                        className="w-full h-full object-cover"
+                        src="https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg"
                         alt="Product"
                     />
                     <div className="p-6">
@@ -37,6 +41,7 @@ const Buy = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

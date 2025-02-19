@@ -59,7 +59,7 @@ const Wishlist = () => {
                             key={item.id}
                             className="border rounded-lg p-4 shadow hover:shadow-lg transition"
                         >
-                            <img src={item.thumbnail} alt={item.name} className="w-full h-50 object-cover rounded" />
+                            <img src={item.thumbnail} alt={item.title} className="w-full h-50 object-cover rounded" />
                             <h2 className="text-lg font-semibold mt-2">{item.title}</h2>
                             <p className="text-gray-600">{item.price}</p>
                             <button onClick={() => dispatch(remove_to_wishlist(item))} className="mt-3 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
@@ -70,15 +70,15 @@ const Wishlist = () => {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {wishlist_data2.map((item) => (
+                    {wishlist_data2.map((product) => (
                         <div
-                            key={item.id}
+                            key={product.id}
                             className="border rounded-lg p-4 shadow hover:shadow-lg transition"
                         >
-                            <img src={item.thumbnail} alt={item.name} className="w-full h-50 object-cover rounded" />
-                            <h2 className="text-lg font-semibold mt-2">{item.title}</h2>
-                            <p className="text-gray-600">{item.price}</p>
-                            <button onClick={() => dispatch(remove_to_wishlist(item))} className="mt-3 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+                            <img src={product.thumbnail} alt={product.name} className="w-full h-50 object-cover rounded" />
+                            <h2 className="text-lg font-semibold mt-2">{product.title}</h2>
+                            <p className="text-gray-600">{product.price}</p>
+                            <button onClick={() => dispatch(remove_to_wishlist(product))} className="mt-3 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
                                 Remove from Wishlist
                             </button>
                         </div>

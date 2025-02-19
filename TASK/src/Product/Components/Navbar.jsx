@@ -10,7 +10,7 @@ const Navbar = () => {
     const cart_data_length = useSelector(state => state.cart)
 
     return (
-        <div className='bg-slate-200 flex justify-around p-4 items-center'>
+        <div className='bg-slate-200 flex justify-around items-center'>
             <div>
                 <img src="https://redux.js.org/img/redux.svg" alt="" className='h-20 w-20' />
             </div>
